@@ -1,0 +1,4 @@
+GMR-2 synthetic example payload.
+This is NOT real intercepted satphone data.
+fn22=42 key=0011223344556677
+Chained keystream is used for length > 15 bytes.

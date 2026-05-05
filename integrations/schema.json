@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "GMR decoder artifacts (crypto stage)",
+  "type": "object",
+  "required": ["scheme", "ciphertext"],
+  "properties": {
+    "scheme": {
+      "type": "string",
+      "enum": ["gmr1", "gmr2"]
+    },
+    "ciphertext": {
+      "type": "string",
+      "description": "Hex bytes already aligned to cipher XOR stage (no spaces)."
+    },
+    "ciphertext_bits": {
+      "type": "string",
+      "description": "Optional bitstring '0'/'1' aligned to cipher XOR stage."
+    },
+    "channel": {
+      "type": "string",
+      "description": "Optional logical channel name (e.g. tch3_speech, facch9_mux)."
+    },
+    "tn": {
+      "type": "integer",
+      "description": "Optional timeslot number (GMR-1) from decoder."
+    },
+    "sync_id": {
+      "type": "integer",
+      "description": "Optional sync identifier (decoder-specific; e.g., FACCH9 vs TCH9)."
+    },
+    "toa": {
+      "type": "number",
+      "description": "Optional time-of-arrival estimate from demod (decoder-specific)."
+    },
+    "nbits": {
+      "type": "integer",
+      "description": "Optional number of cipher bits (used with ciphertext_bits)."
+    },
+    "kc": {
+      "type": "string",
+      "description": "GMR-1 session key Kc (8 bytes hex). Required when scheme=gmr1."
+    },
+    "fn": {
+      "description": "GMR-1 frame number. Integer or 0x-prefixed string.",
+      "oneOf": [
+        { "type": "integer" },
+        { "type": "string" }
+      ]
+    },
+    "uplink": {
+      "type": "boolean",
+      "description": "GMR-1 direction flag. Default false (downlink)."
+    },
+    "key": {
+      "type": "string",
+      "description": "GMR-2 key (8 bytes hex). Required when scheme=gmr2."
+    },
+    "fn22": {
+      "description": "GMR-2 22-bit counter start (integer or 0x string).",
+      "oneOf": [
+        { "type": "integer" },
+        { "type": "string" }
+      ]
+    },
+    "direction": {
+      "type": "boolean",
+      "description": "GMR-2 direction bit (used only in default pack_frame_to_s)."
+    },
+    "initial_s": {
+      "type": "string",
+      "description": "Optional 8-byte initial S override for *first* key-frame only (hex)."
+    }
+  }
+}
+

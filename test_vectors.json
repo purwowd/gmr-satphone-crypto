@@ -1,0 +1,12 @@
+{
+  "_comment": "Regression vectors for this Python port. GMR-1 matches osmo-gmr a5.c logic; regenerate with: python3 -c \"import gmr1_cipher as g1; print(g1.keystream_bytes_dl(bytes(8),0,16).hex())\" etc.",
+  "gmr1": {
+    "kc_zero_fn0_dl_16": "3c973c1fe22ab3cb9e8d822161002b7a",
+    "kc_sample_fn_0x1a2b3_dl_4": "ec069ea0",
+    "kc_sample_fn_0x1a2b3_bits_32": "11101100000001101001111010100000"
+  },
+  "gmr2": {
+    "key_sample_fn42_keyframe15": "a0deaaf72789058df7948d30fc5efd",
+    "key_zero_chained_32_fn0": "2cc8a200fc5c2f9d164e0f0d2cc8a28aae3e20f79486f0d6118aae3e20f7ce47"
+  }
+}
