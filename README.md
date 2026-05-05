@@ -117,7 +117,7 @@ Hybrid integration concept:
 4. Extract from the decode chain (manually or via a patch): a cipher-aligned **ciphertext blob**, the **frame number** used in `gmr1_a5`, and **Kc** (lab/legal only).  
 5. Call `gmr1_cipher.encrypt_decrypt` or do bit-level XOR via `keystream_for_channel`.
 
-For **GMR-2**, there is no broadly used `osmo-gmr` equivalent; “real” integration often relies on **firmware/research vectors** plus tuning **`initial_s`** (see [§6](#6-gmr-2-a5-gmr-2--details)).
+For **GMR-2**, there is no broadly used `osmo-gmr` equivalent; “real” integration often relies on **firmware/research vectors** plus tuning **`initial_s`** (see [6](#6-gmr-2-a5-gmr-2--details)).
 
 ---
 
@@ -126,7 +126,7 @@ For **GMR-2**, there is no broadly used `osmo-gmr` equivalent; “real” integr
 ### 3.1 Recommended environment
 
 - Python **3.10+**  
-- (Optional) `pytest` — see [§9](#9-tests--regression-vectors)  
+- (Optional) `pytest` — see [9](#9-tests--regression-vectors)  
 - For RF: RTL-SDR drivers, SatDump or SDR#, **GNU Radio** if you build an IQ pipeline  
 - For GMR-1 reference decoding: clone & build **[osmo-gmr](https://github.com/osmocom/osmo-gmr)** (see that project's README)
 
